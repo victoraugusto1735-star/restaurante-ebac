@@ -1,5 +1,19 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import CardapioApp from "./CardapioApp";
 
-createRoot(document.getElementById("root")).render(<CardapioApp />);
+const CardapioApp = React.lazy(() => import("cardapio/CardapioApp"));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Carregando...</div>}>
+      <div>
+        <h1>Container</h1>
+
+        <CardapioApp />
+      </div>
+    </Suspense>
+  );
+}
+
+const root = createRoot(document.getElementById("root"));
+root.render(<App />);
