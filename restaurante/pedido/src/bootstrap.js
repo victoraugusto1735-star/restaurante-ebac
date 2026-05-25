@@ -1,6 +1,5 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import CardapioApp from "./CardapioApp";
-import("./bootstrap");
+import PedidoApp from "./PedidoApp";
 
-createRoot(document.getElementById("root")).render(<CardapioApp />);
+createRoot(document.getElementById("root")).render(<PedidoApp />);
